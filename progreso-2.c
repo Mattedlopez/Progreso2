@@ -12,7 +12,7 @@ void opc1(int matriz[23][3]){
             suma[i] += matriz[i][j];
             promedio[i] = suma[i]/3;
         }
-        printf("Estudiante: %d. %f  Promedio: %f\n", i+1, suma[i], promedio[i]);
+        printf("Estudiante %d: %f  Promedio: %f\n", i+1, suma[i], promedio[i]);
     }
     
 }
@@ -23,15 +23,16 @@ void opc2(int matriz[23][3]){
     int i,j;
 
     for ( i = 0; i < 3; i++){
-        printf("Progreso 1: ");
+        printf("Progreso %d: ",i+1);
         for ( j = 0; j < 23; j++){
             suma[i] += matriz[i][j];
-            promedio[i] = suma[i]/3;
+            promedio[i] = suma[i]/23;
         }
-        printf("Estudiante: %d. %f  Promedio: %f\n", i+1, suma[i], promedio[i]);
+        printf("Suma: %f  Promedio: %f\n", suma[i], promedio[i]);
     }
     
 }
+
 
 int menu(int matriz[23][3], int flag){
     int n;
@@ -39,7 +40,7 @@ int menu(int matriz[23][3], int flag){
     
     flag = 1;
     while ( flag == 1){
-        printf("1. Promedio del semestre de cada estdinte.\n2. Promdio de cada progreso.\n3.Alumno con mayor promedio.");
+        printf("\n1. Promedio del semestre de cada estdinte.\n2. Promdio de cada progreso.\n3.Alumno con mayor promedio.");
         printf("\nEscoje una opcion: ");
         scanf("%d", &n);
 
@@ -84,7 +85,7 @@ int main(){
         printf("\n");
     }
     
-    printf("\n******PROGRESO 2******\n\n");
+    printf("\n******PROGRESO 2******\n");
     while (flag == 1){
         menu(matriz, flag);
     }
